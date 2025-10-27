@@ -1,5 +1,7 @@
 Задание 4
-4.1 CREATE TABLE Users (
+
+4.1 
+CREATE TABLE Users (
     Users_Id INT PRIMARY KEY,
     Banned VARCHAR(3),
     Role VARCHAR(10)
@@ -52,7 +54,6 @@ GROUP BY Request_at
 ORDER BY Request_at;
 
 4.2 
-
 CREATE TABLE Employee2 (
     Id INT PRIMARY KEY,
     Name VARCHAR(50),
@@ -93,3 +94,4 @@ SELECT
 FROM RankedEmployees
 WHERE salary_rank <= 3
 ORDER BY Department, Salary DESC;
+
