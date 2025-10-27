@@ -17,7 +17,7 @@ GROUP BY email
 HAVING COUNT(*) > 1;
 
 1.2 
-CREATE TABLE World(name varchar(25), continent varchar(25), area int, population int)
+CREATE TABLE World(name varchar(25), continent varchar(25), area int, population int);
 
 INSERT INTO World VALUES('Afghanistan', 'Asia', 652230, 25500100);
 INSERT INTO World VALUES('Albania', 'Europe', 28748, 2831741);
@@ -26,6 +26,7 @@ INSERT INTO World VALUES('France', 'Europe', 547030, 67841000);
 INSERT INTO World VALUES('Russia', 'Europe', 17125191, 145478097);
 
 SELECT name, population, area FROM World
+
 
 
 
