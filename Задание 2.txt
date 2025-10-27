@@ -1,6 +1,7 @@
 Задание 2
 
-2.1 CREATE TABLE courses(student varchar(10), class varchar(25))
+2.1 
+CREATE TABLE courses(student varchar(10), class varchar(25));
 
 INSERT INTO courses VALUES('A', 'Math');
 INSERT INTO courses VALUES('B', 'English');
@@ -37,7 +38,8 @@ SET sex = CASE
 END;
 SELECT * FROM salary;
 
-2.3 CREATE TABLE Person(PersonId int PRIMARY KEY, FirstName varchar(25), LastName varchar(25));
+2.3 
+CREATE TABLE Person(PersonId int PRIMARY KEY, FirstName varchar(25), LastName varchar(25));
 CREATE TABLE Adress(AdressId int PRIMARY KEY, PersonId int, city varchar(25), State varchar(25));
 
 INSERT INTO Person VALUES(1,'Вася', 'Пупкин');
@@ -66,3 +68,4 @@ WHERE Id NOT IN (
     GROUP BY Email
 );
 SELECT * FROM email;
+
