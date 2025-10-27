@@ -1,6 +1,6 @@
 Задание 1
 1. 1
-CREATE TABLE email(Id int, Email varchar(50))
+CREATE TABLE email(Id int, Email varchar(50));
 
 INSERT INTO email VALUES (1, "a@b.com");
 INSERT INTO email VALUES (2, "c@d.com"); 
@@ -25,5 +25,6 @@ INSERT INTO World VALUES('France', 'Europe', 547030, 67841000);
 INSERT INTO World VALUES('Russia', 'Europe', 17125191, 145478097);
 
 SELECT name, population, area FROM World
+
 
 
