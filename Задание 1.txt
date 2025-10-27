@@ -25,9 +25,6 @@ INSERT INTO World VALUES('China', 'Asia', 9598962, 1412600000);
 INSERT INTO World VALUES('France', 'Europe', 547030, 67841000);
 INSERT INTO World VALUES('Russia', 'Europe', 17125191, 145478097);
 
-SELECT name, population, area FROM World
-
-
-
-
-
+SELECT name, population, area 
+FROM World 
+WHERE area > 3000000 OR population > 25000000;
