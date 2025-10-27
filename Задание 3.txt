@@ -1,0 +1,51 @@
+Задание 3
+3.1
+
+CREATE TABLE Employee(Id int PRIMARY KEY, Name varchar(25), Salary INT, DepartmentId INT)
+CREATE TABLE Departament(Id int PRIMARY KEY, Name varchar(25))
+
+INSERT INTO Employee VALUES(1,'Joe', 70000, 1);
+INSERT INTO Employee VALUES(2,'Henry', 80000, 2);
+INSERT INTO Employee VALUES(3,'Sam', 60000, 2);
+INSERT INTO Employee VALUES(4,'Max', 90000, 1);
+
+INSERT INTO Departament VALUES(1,'IT');
+INSERT INTO Departament VALUES(2,'Sales');
+
+SELECT d.Name as Departament, e.Name as Employee, e.Salary as Salary
+FROM Employee e
+JOIN Departament d ON e.DepartmentId = d.Id
+WHERE(e.DepartmentId, e.Salary) IN (SELECT DepartmentId, MAX(Salary) FROM Employee GROUP BY DepartmentId);
+
+3.2 
+CREATE TABLE seat(id int, student varchar(25))
+INSERT INTO seat VALUES(1,'Дарья');
+INSERT INTO seat VALUES(2,'Иван');
+INSERT INTO seat VALUES(3,'Светлана');
+INSERT INTO seat VALUES(4,'Александр');
+INSERT INTO seat VALUES(5,'Петр');
+
+SELECT
+    CASE
+        WHEN id % 2 = 0 THEN id - 1
+        WHEN id % 2 = 1 AND id = (SELECT MAX(id) FROM seat) THEN id
+        ELSE id + 1
+    END AS id,
+    student FROM seat
+ORDER BY id;
+
+3.3 CREATE TABLE scores(Id int, Score varchar(25))
+INSERT INTO scores (Id, Score) VALUES
+(1, 3.50),
+(2, 3.65),
+(3, 4.00),
+(4, 3.85),
+(5, 4.00),
+(6, 3.65);
+
+SELECT 
+s.Score, 
+dense_rank() OVER (ORDER BY s.Score DESC) AS Id
+FROM scores s
+ORDER BY s.Score DESC
+

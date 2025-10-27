@@ -1,0 +1,29 @@
+Задание 1
+1. 1
+CREATE TABLE email(Id int, Email varchar(50))
+
+INSERT INTO email VALUES (1, "a@b.com");
+INSERT INTO email VALUES (2, "c@d.com"); 
+INSERT INTO email VALUES (3, "a@b.com");
+INSERT INTO email VALUES (4, "c@d.com"); 
+INSERT INTO email VALUES (5, "b@a.com"); 
+INSERT INTO email VALUES (6, "b@a.com"); 
+INSERT INTO email VALUES (7, "pipe@mgpu.ru"); 
+INSERT INTO email VALUES (8, "mgtu@bmstu.ru"); 
+INSERT INTO email VALUES (9, "pipe@mgpu.ru");
+
+SELECT Email FROM email 
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+1.2 CREATE TABLE World(name varchar(25), continent varchar(25), area int, population int)
+
+INSERT INTO World VALUES('Afghanistan', 'Asia', 652230, 25500100);
+INSERT INTO World VALUES('Albania', 'Europe', 28748, 2831741);
+INSERT INTO World VALUES('China', 'Asia', 9598962, 1412600000);
+INSERT INTO World VALUES('France', 'Europe', 547030, 67841000);
+INSERT INTO World VALUES('Russia', 'Europe', 17125191, 145478097);
+
+SELECT name, population, area FROM World
+
+
