@@ -1,8 +1,8 @@
 Задание 3
 3.1
 
-CREATE TABLE Employee(Id int PRIMARY KEY, Name varchar(25), Salary INT, DepartmentId INT)
-CREATE TABLE Departament(Id int PRIMARY KEY, Name varchar(25))
+CREATE TABLE Employee(Id int PRIMARY KEY, Name varchar(25), Salary INT, DepartmentId INT);
+CREATE TABLE Departament(Id int PRIMARY KEY, Name varchar(25));
 
 INSERT INTO Employee VALUES(1,'Joe', 70000, 1);
 INSERT INTO Employee VALUES(2,'Henry', 80000, 2);
@@ -18,7 +18,8 @@ JOIN Departament d ON e.DepartmentId = d.Id
 WHERE(e.DepartmentId, e.Salary) IN (SELECT DepartmentId, MAX(Salary) FROM Employee GROUP BY DepartmentId);
 
 3.2 
-CREATE TABLE seat(id int, student varchar(25))
+CREATE TABLE seat(id int, student varchar(25));
+
 INSERT INTO seat VALUES(1,'Дарья');
 INSERT INTO seat VALUES(2,'Иван');
 INSERT INTO seat VALUES(3,'Светлана');
@@ -34,7 +35,9 @@ SELECT
     student FROM seat
 ORDER BY id;
 
-3.3 CREATE TABLE scores(Id int, Score varchar(25))
+3.3 
+CREATE TABLE scores(Id int, Score varchar(25));
+
 INSERT INTO scores (Id, Score) VALUES
 (1, 3.50),
 (2, 3.65),
@@ -48,4 +51,3 @@ s.Score,
 dense_rank() OVER (ORDER BY s.Score DESC) AS Id
 FROM scores s
 ORDER BY s.Score DESC
-
